@@ -1,0 +1,119 @@
+body{
+
+    background : black;
+
+    color: white;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+}
+
+
+#game{
+
+
+    background: url('img/forrest.jpg');
+
+    position: absolute;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    top: 40vh;
+
+    height: 50vh;
+
+    width: 100%;
+    
+
+
+
+
+}
+
+
+#forrest2{
+
+    background: url('img/forrest.jpg');
+
+    background-repeat: no-repeat;
+
+    position: absolute;
+
+    background-size: cover;
+
+    
+    width: 100vw;
+
+    top: 40vh;
+    
+    height: 50vh;
+
+
+
+}
+
+
+#characterDiv{
+
+    height: 80%;
+
+    width: 30%;
+
+    background:gold;
+
+    position: absolute;
+
+    top: 20%;
+
+    left: 25%;
+
+
+
+}
+
+
+#character{
+
+    
+    position: absolute;
+
+    top: 60%;
+    
+    height: 40%;
+
+    width:10%;
+
+    background: black;
+
+
+}
+
+
+#light{
+
+
+}
+
+#woman{
+
+    height: 40%;
+
+    width: 5%;
+
+    background: white;
+
+    position: absolute;
+
+    top: 60%;
+
+    
+    left: 95vw;
+}
+
+
