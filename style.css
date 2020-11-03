@@ -13,8 +13,7 @@ body{
 }
 
 
-#game{
-
+#forrest{
 
     background: url('img/forrest.jpg');
 
@@ -30,11 +29,11 @@ body{
 
     width: 100%;
     
-
-
-
-
+    z-index: 1;
+    
 }
+
+
 
 
 #forrest2{
@@ -54,66 +53,214 @@ body{
     
     height: 50vh;
 
+    z-index: 1;
 
 
+}
+
+
+#tree{
+
+    position: fixed;
+
+    right: 0px;
+
+    top: 20px;
+
+    z-index: 2;
+}
+
+#tree img{
+
+     height: 80px;
+
+     width: auto;
+
+     opacity: 0.8;
+
+    
 }
 
 
 #characterDiv{
 
-    height: 80%;
+    height: 30vh;
 
-    width: 30%;
+    width: 20vw;
 
     background:gold;
 
-    position: absolute;
+    position: fixed;
 
-    top: 20%;
+    top: 60vh;
 
-    left: 25%;
+    z-index: 2;
 
+    display: flex;
+
+    flex-direction: row;
+
+}
+
+
+
+.forwardLightDirection{
+
+    left:40vw;
+
+    justify-content: flex-start;
 
 
 }
 
 
+
+.backWardLightDirection{
+
+    left:20vw;
+
+    justify-content: flex-end;
+
+}
+
 #character{
 
-    
-    position: absolute;
+    margin-top: 40%;
 
-    top: 60%;
-    
-    height: 40%;
+    height: 50%;
 
     width:10%;
 
     background: black;
-
-
 }
 
 
-#light{
 
+#opponent{
 
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: red;
+
+    position: fixed;
+
+    top: 75vh;
+
+    left: 75vw;
+
+    z-index: 2;
+
+    animation: opponentRunFromLeft 60s infinite linear;
+    
 }
 
-#woman{
 
-    height: 40%;
 
-    width: 5%;
+#lady{
+    
+    height: 15vh;
+
+    width: 3.5vw;
 
     background: white;
 
-    position: absolute;
+    position: fixed;
 
-    top: 60%;
+    top: 75vh;
+
+    right: 5vw;
+
+    z-index: 5;
+ 
+}
+
+
+#bullet{
+
+background: black;
+
+position: absolute;
+
+top: 80vh;
+
+left: 40vw;
+
+height: 0.5vh;
+
+width: 1vw;
+
+z-index: 3;
+
+}
+
+
+#machineGun{
+
+    background: black;
+    
+    position: absolute;
+    
+    top: 85vh;
+    
+    left: 40vw;
+    
+    height: 3vh;
+    
+    width: 4vw;
+    
+    z-index: 3;
 
     
-    left: 95vw;
 }
+
+
+
+
+
+
+
+ @keyframes gunshot{
+
+    0%{ left: 30vw}
+    30%{ left: 70vw}
+    100%{ left: 100vw}
+
+ }
+
+ @keyframes opponentRunFromRight{
+
+
+    0%{ left: 75vw}
+    30%{ left: 30vw}
+    100%{ left: 0vw}
+
+ }
+
+ @keyframes opponentRunFromLeft{
+
+    0%{ left: 0vw}
+    30%{ left: 30vw}
+    100%{ left: 75vw}
+
+ }
+
+
+ 
+ @keyframes shot{
+
+    0%{ left: 40vw}
+    30%{ left: 60vw}
+    70%{ left: 85vw}
+    100%{ left: 100vw} 
+}
+
+ }
+
+
+
+
 
 
