@@ -22,6 +22,15 @@
 
          <div id='gun'></div>
 
+         <div id="book1" onclick='foundBook(event)'></div>
+         <div id="book2" onclick='foundBook(event)'></div>
+         <div id="book3" onclick='foundBook(event)' ></div>
+         <div id="book4" onclick='foundBook(event)'></div>
+         <div id="book5" onclick='foundBook(event)'></div>
+         <div id="book6" onclick='foundBook(event)'></div>
+         <div id="book7" onclick='foundBook(event)' ></div>
+
+
 
         <div id='opponent'></div>
 
@@ -51,11 +60,15 @@
 
          var background2Right = -99;
 
-         var currentWeapon = gun;
 
-         var distance = 0;         
+         var distance = 0; 
+          
+
+         var maxDistance = 1500;        
             
          var shotInterval;
+
+         var none = 'none';
 
          //DIRECTIONS
 
@@ -99,21 +112,37 @@
          var gunLoaded = true;
 
 
-         
+         var book1 = document.getElementById("book1");
+         var book2 = document.getElementById("book2");
+         var book3 = document.getElementById("book3");
+         var book4 = document.getElementById("book4");
+         var book5 = document.getElementById("book5");
+         var book6 = document.getElementById("book6");
+         var book7 = document.getElementById("book7");
+      
 
-
+         var opponentOnScreen = false;
 
          var ladyOnScreen = true;
 
+         var book1OnScreen = true;
+         var book2OnScreen = true;
+         var book3OnScreen = true;
+         var book4OnScreen = true;
+         var book5OnScreen = true;
+         var book6OnScreen = true;
+         var book7OnScreen = true;
+
+
          var ladySeesThePlayer = false;
-
-
-         var opponentOnScreen = false;
 
 
 
 
          var carefulMessage = document.getElementById('carefulDiv');
+
+
+         
 
 
 
@@ -122,10 +151,25 @@
          //WEAPONS 
 
 
-         gun = 'none';
+         var gun = 'gun';
 
-         machineGun = 'machineGun';
+         var ump45 = 'ump45';
 
+
+         var inventory = [];
+
+
+         var currentWeapon = none;
+
+         
+         var checkGunInterval;
+
+         var checkUmp45Interval;
+
+
+
+
+         //INTERVAL
         
 
 
@@ -136,6 +180,12 @@
             setInterval(function(){checkPlayerCollision()}, 100);
 
             setTimeout(function() { nextOpponentsAppearance()}, 5000);
+
+
+            //LAUNCH AN INTERVAL TO CHECK IF THE PLAYER FIND A GUN (INTERVAL CLEARED WHEN THE PLAYER DOES)
+
+
+            checkGunInterval = setInterval( function(){ checkGun()}, 2000);
 
 
 
@@ -312,12 +362,10 @@
                        
                     if(opponentLeftEdge <= characterLeftEdge ){
                     
-
-
                 }
 
                      
-                 }
+          }
                  
          
      }
@@ -349,8 +397,13 @@
 
 
 
-        function forwardPlayerMove(){
+     function forwardPlayerMove(){
 
+         console.log(distance);
+
+
+          if(distance < maxDistance){
+              
 
             distance += 1;
 
@@ -386,42 +439,77 @@
                 }
 
 
-
-                if(distance >= 50 && gun == 'none'){
-
-                    gunAppearance();
-
-                    alert('vous avez trouvé un ump45!!');
-
-                    gun = 'ump45';
+            }
 
 
+            if(book1OnScreen == true){
 
 
-                }
+                let updatedBook1Right = parseInt(window.getComputedStyle(book1).getPropertyValue('right')) + 6;
+
+
+                book1.style.right = updatedBook1Right + 'px';
+
+            } if(book2OnScreen == true){
+
+
+                let updatedBook2Right = parseInt(window.getComputedStyle(book2).getPropertyValue('right')) + 6;
+
+
+                book2.style.right = updatedBook2Right + 'px';
+ 
+            } if(book3OnScreen == true){
+
+
+                let updatedBook3Right = parseInt(window.getComputedStyle(book3).getPropertyValue('right')) + 6;
+
+
+                book3.style.right = updatedBook3Right + 'px';
+
+            } if(book4OnScreen == true){
+
+
+                let updatedBook4Right = parseInt(window.getComputedStyle(book4).getPropertyValue('right')) + 6;
+
+
+                book4.style.right = updatedBook4Right + 'px';
+
+            } if(book5OnScreen == true){
+
+
+                let updatedBook5Right = parseInt(window.getComputedStyle(book5).getPropertyValue('right')) + 6;
+
+
+                book5.style.right = updatedBook5Right + 'px';
+
+            } if(book6OnScreen == true){
+
+
+                let updatedBook6Right = parseInt(window.getComputedStyle(book6).getPropertyValue('right')) + 6;
+
+
+                book6.style.right = updatedBook6Right + 'px';
+
+
+            } if(book7OnScreen == true){
+
+
+                let updatedBook7Right = parseInt(window.getComputedStyle(book7).getPropertyValue('right')) + 6;
+
+
+                book7.style.right = updatedBook7Right + 'px';
 
             }
-        
-
-        function gunAppearance(){
-
-            //APPEND gun div at the end.
-
-            document.getElementB
-
-            let gun = document.createElement('div');
-
-            gun.setAttribute('id', 'gunPackDiv');
-
 
         
-        }
+            //
 
 
 
+          } else {
 
-
-            //display 
+              alert('on dirait que je ne peux pas aller plus loin');
+          }
 
 
         }
@@ -475,10 +563,69 @@
             }
 
 
+        }
+
+
+        
+
+            if(book1OnScreen == true){
+
+
+                let updatedBook1Right = parseInt(window.getComputedStyle(book1).getPropertyValue('right')) - 6;
+
+
+                book1.style.right = updatedBook1Right + 'px';
+
+            } if(book2OnScreen == true){
+
+
+                let updatedBook2Right = parseInt(window.getComputedStyle(book2).getPropertyValue('right')) - 6;
+
+
+                book2.style.right = updatedBook2Right + 'px';
+ 
+            } if(book3OnScreen == true){
+
+
+                let updatedBook3Right = parseInt(window.getComputedStyle(book3).getPropertyValue('right')) - 6;
+
+
+                book3.style.right = updatedBook3Right + 'px';
+
+            } if(book4OnScreen == true){
+
+
+                let updatedBook4Right = parseInt(window.getComputedStyle(book4).getPropertyValue('right')) - 6;
+
+
+                book4.style.right = updatedBook4Right + 'px';
+
+            } if(book5OnScreen == true){
+
+
+                let updatedBook5Right = parseInt(window.getComputedStyle(book5).getPropertyValue('right')) - 6;
+
+
+                book5.style.right = updatedBook5Right + 'px';
+
+            } if(book6OnScreen == true){
+
+
+                let updatedBook6Right = parseInt(window.getComputedStyle(book6).getPropertyValue('right')) - 6;
+
+
+                book6.style.right = updatedBook6Right + 'px';
+
+
+            } if(book7OnScreen == true){
+
+
+                let updatedBook7Right = parseInt(window.getComputedStyle(book7).getPropertyValue('right')) - 6;
+
+
+                book7.style.right = updatedBook7Right + 'px';
+
             }
-
-
-
 
 
         }
@@ -487,9 +634,6 @@
 
 
         function nextOpponentsAppearance(){
-
-
-            alert('a new ennemy will arrive soon')
 
 
 
@@ -576,6 +720,8 @@
 
           }
 
+
+
   
 
      }
@@ -586,7 +732,7 @@
      
     document.addEventListener("keypress", function(event) {
 
-                  //IF YOU PRESS Q, JUMP
+                  //IF YOU PRESS Q, 
 
           if (event.keyCode == 113) {
 
@@ -599,9 +745,12 @@
                 
 
                     
-                 //IF YOU PRESS S, LONG TERM SHOT
+                 //IF YOU PRESS S, NEW WEAPON
 
-          } 
+          } else if(event.keyCode == 115){
+
+              nextWeapon();
+          }
      });
 
 
@@ -646,7 +795,7 @@
 
      function shoot(){
 
-         if(gun != 'none'){
+         if(currentWeapon != none){
 
          bullet.style.opacity = '1';
 
@@ -657,18 +806,41 @@
         let updatedBulletPosition = parseInt(window.getComputedStyle(bullet).getPropertyValue('right'));
 
          if( playerDirection == forward ){
+
+             if(currentWeapon == gun){
+     
+                  shotInterval = setInterval(function(){
+
+                  updatedBulletPosition -= 60;
+
+                  bullet.style.right = updatedBulletPosition + 'px';
+
+                  checkBulletCollision();
+            
+                  }, 30);
+
+
+
+             } else if (currentWeapon == ump45){
+
+
+                 
+                  shotInterval = setInterval(function(){
+
+                  updatedBulletPosition -= 60;
+
+                  bullet.style.right = updatedBulletPosition + 'px';
+
+                  checkBulletCollision();
+            
+                  }, 10);
+
+
+
+
+             }
      
 
-        shotInterval = setInterval(function(){
-
-            updatedBulletPosition -= 30;
-
-            bullet.style.right = updatedBulletPosition + 'px';
-
-            checkBulletCollision();
-
-            
-         }, 10);
 
          
         
@@ -690,17 +862,42 @@
 
          } else {
 
+             
+             if(currentWeapon == gun){
+     
+                  shotInterval = setInterval(function(){
+
+                  updatedBulletPosition += 60;
+
+                  bullet.style.right = updatedBulletPosition + 'px';
+
+                  checkBulletCollision();
             
-        shotInterval = setInterval(function(){
-
-            updatedBulletPosition += 30;
-
-            bullet.style.right = updatedBulletPosition + 'px';
+                  }, 30);
 
 
-            checkBulletCollision();
+
+             } else if (currentWeapon == ump45){
+
+
+                 
+                  shotInterval = setInterval(function(){
+
+                  updatedBulletPosition += 60;
+
+                  bullet.style.right = updatedBulletPosition + 'px';
+
+                  checkBulletCollision();
             
-         }, 10);
+                  }, 10);
+
+
+
+
+             }
+
+            
+        
 
          
            setTimeout(function(){
@@ -780,12 +977,9 @@
 
                   nextOpponentsAppearance();
 
-
             }
 
           }   
-
-
 
 
        }
@@ -809,6 +1003,95 @@
         }
 
     }
+
+
+
+
+    function checkGun(){
+
+
+        
+                if(distance >= 50){
+
+                    alert('vous avez trouvé un gun');
+
+                    currentWeapon = gun;
+
+                    inventory.push(gun);
+
+
+                    clearInterval(checkGunInterval);
+
+                     checkUmp45Interval = setInterval(function(){
+
+
+                         checkUmp45();
+
+
+                       
+                   }, 2000);
+
+                    
+                }
+
+        }
+
+
+
+        function checkUmp45(){
+
+            
+                 if(distance >= 150){
+
+                    alert('vous avez trouvé un ump45!!!!!!');
+
+                    inventory.push(gun);
+
+                    currentWeapon = ump45;
+
+                    clearInterval(checkUmp45Interval);
+
+
+                }
+
+        }
+
+
+
+        function nextWeapon(){
+
+            if(inventory.length == 2){
+
+                if(currentWeapon == gun){
+
+                    currentWeapon = ump45;
+
+                    alert("vous avez à présent l'UMP45!");
+
+                } else {
+
+                    currentWeapon = gun;
+
+                    alert("vous avez à présent le gun");
+
+
+                }
+
+             } 
+
+
+        }
+
+
+        function foundBook(event){
+
+            let bookRightPosition = window.getComputedStyle(event.target).getPropertyValue('right');
+
+
+                
+                alert('livre trouvé à la position: ' + bookRightPosition);
+
+        }
 
 
        

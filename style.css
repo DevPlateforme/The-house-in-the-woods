@@ -250,6 +250,141 @@ background: black;
 
 
 
+#book1{
+
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: orange;
+
+    position: fixed;
+
+    top: 75vh;
+
+    right: -50vw;
+    z-index: 2;
+   
+}
+
+
+#book2{
+
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: orange;
+
+    position: fixed;
+
+    top: 75vh;
+
+    right: -100vw;
+    z-index: 2;
+   
+}
+
+
+#book3{
+
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: orange;
+
+    position: fixed;
+
+    top: 75vh;
+
+    right: -120vw;
+    z-index: 2;
+   
+}
+
+
+#book4{
+
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: orange;
+
+    position: fixed;
+
+    top: 75vh;
+
+    right: -180vw;
+    z-index: 2;
+   
+}
+
+
+#book5{
+
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: orange;
+
+    position: fixed;
+
+    top: 75vh;
+
+    right: -250vw;
+    z-index: 2;
+   
+}
+
+
+#book6{
+
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: orange;
+
+    position: fixed;
+
+    top: 75vh;
+
+    right: -300vw;
+    z-index: 2;
+   
+}
+
+#book7{
+
+    
+    height: 15vh;
+
+    width: 3.5vw;
+
+    background: orange;
+
+    position: fixed;
+
+    top: 75vh;
+
+    right: -400vw;
+    z-index: 2;
+   
+}
+
+
+
+
+
 
  @keyframes gunshot{
 
