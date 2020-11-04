@@ -13,6 +13,9 @@
               <div id='character'></div>
         </div>
 
+        <div id='carefulDiv'>careful!!</div>
+
+
         <div id='bullet'></div>
 
         <div id='machineGun'></div>
@@ -31,8 +34,6 @@
 
        <div id='forrest2'>
 
-         
-        
     </div>
 
 
@@ -52,8 +53,9 @@
 
          var currentWeapon = gun;
 
-         var distance = 0;
-
+         var distance = 0;         
+            
+         var shotInterval;
 
          //DIRECTIONS
 
@@ -61,9 +63,24 @@
          var forward = 'forward';
 
          var backward = 'backward';
+           
+
+         //PLAYER DIRECTION
+      
+         var playerDirection = forward;
 
 
-         var direction = forward;
+         //OPPONENT DIRECTION
+
+         var opponentDirection;
+
+
+         //OPPONENT DIRECTION TYPES
+
+         var rightToLeft = 'rightToLeft';
+
+         var leftToRight = 'leftToRight';
+
 
          var deathCount;
 
@@ -78,6 +95,10 @@
          var bullet = document.getElementById('bullet');
 
 
+
+         var gunLoaded = true;
+
+
          
 
 
@@ -87,6 +108,13 @@
          var ladySeesThePlayer = false;
 
 
+         var opponentOnScreen = false;
+
+
+
+
+         var carefulMessage = document.getElementById('carefulDiv');
+
 
 
 
@@ -94,7 +122,7 @@
          //WEAPONS 
 
 
-         gun = 'gun';
+         gun = 'none';
 
          machineGun = 'machineGun';
 
@@ -106,6 +134,16 @@
             document.onkeydown = checkKey;
            
             setInterval(function(){checkPlayerCollision()}, 100);
+
+            setTimeout(function() { nextOpponentsAppearance()}, 5000);
+
+
+
+
+
+
+
+            //OPPONENTS APPARENCE
 
          }
 
@@ -150,8 +188,6 @@
 
            distance += 0.1;
 
-           console.log('distance : ' + distance);
-
 
            if(background1Right >= 98){
 
@@ -173,8 +209,6 @@
            
            background2Right += 0.6;
            
-           console.log(background2Right);
-
            
        }
 
@@ -244,37 +278,49 @@
 
 
 
-                 //CHECK A MADMAN HIT THE PLAYER
+                 //CHECK IF AN OPPONENT HIT THE PLAYER
 
-                 console.log('lady right + width : ' + (ladyRight + ladyWidth));
+                 if(ladyOnScreen == true){
+                     
+                      if(ladyLeftEdge >= characterLeftEdge ){
 
-                 console.log('light right + width : ' + (flashLightRight + flashLightWidth));
+                            alert('vous avez été tué par la lady');
 
 
 
-                 if(ladyLeftEdge >= characterLeftEdge ){
-
-                    console.log('la lady vous a tué');
-
+                      }
 
                  }
 
+
+
+                     
+               
+
+                //IF OPPONENT GOES FROM RIGHT TO LEFT
+
+                if(opponentDirection == rightToLeft){
+                    
+                     if(opponentLeftEdge >= characterLeftEdge ){
+                    
+
+
+                     }
+
+                 } else if(opponentDirection == leftToRight){
+
+                       
+                    if(opponentLeftEdge <= characterLeftEdge ){
+                    
+
+
+                }
+
+                     
+                 }
                  
-                 if(opponentLeftEdge >= characterLeftEdge ){
-
-                    console.log('un fou vous a tué');
-
-
-                 }
-
-     
-
          
-                 //CHECK IF THE LADY HIT THE PLAYER
-
-
-
-           }
+     }
 
 
 
@@ -296,7 +342,6 @@
             
             if( parseInt(opponentLeft) <= bulletLeft && parseInt(bulletOpacity) == 0){
 
-                console.log('opponent death');
 
             }
 
@@ -306,16 +351,18 @@
 
         function forwardPlayerMove(){
 
-                
-         if (direction == backward){
 
-              direction = forward;
+            distance += 1;
+
+                
+         if (playerDirection == backward){
+
+              playerDirection = forward;
 
               characterDiv.classList.remove('backWardLightDirection');
 
               characterDiv.classList.add('forwardLightDirection');
         }
-
 
             
             moveBackgroundForWard();
@@ -335,11 +382,46 @@
 
                         launchDeathCount();
 
-                        console.log("she sees you!!!!!");
                     }
                 }
 
+
+
+                if(distance >= 50 && gun == 'none'){
+
+                    gunAppearance();
+
+                    alert('vous avez trouvé un ump45!!');
+
+                    gun = 'ump45';
+
+
+
+
+                }
+
             }
+        
+
+        function gunAppearance(){
+
+            //APPEND gun div at the end.
+
+            document.getElementB
+
+            let gun = document.createElement('div');
+
+            gun.setAttribute('id', 'gunPackDiv');
+
+
+        
+        }
+
+
+
+
+
+            //display 
 
 
         }
@@ -349,20 +431,24 @@
 
 
 
-            //MOVE LIGHT
-
             
-         if (direction == forward){
+            if (playerDirection == forward){
+   
+                 playerDirection = backward;
+   
+                 characterDiv.classList.remove('forwardLightDirection');
+   
+                 characterDiv.classList.add('backWardLightDirection');
+    
+             }
+   
 
-              direction = backward;
+            if(distance > 0){
 
-              characterDiv.classList.remove('forwardLightDirection');
+                distance -= 1;
+            
 
-              characterDiv.classList.add('backWardLightDirection');
- 
-        }
-
-
+            //MOVE LIGHT
 
             
             moveBackgroundBackWard();
@@ -389,8 +475,86 @@
             }
 
 
+            }
+
+
+
+
 
         }
+
+
+
+
+        function nextOpponentsAppearance(){
+
+
+            alert('a new ennemy will arrive soon')
+
+
+
+
+            //between 5seconds and 30 seconds, an opponent will arrive, either background or forward.
+             
+             //1 OR 2
+            let randomDirectionNum = Math.floor(Math.random()*2) + 1;
+
+
+            //BETWEEN 10s AND 30s
+
+            let randomTimeNum = Math.floor((Math.random()*5000));
+
+    
+
+
+            //MAX NUM 30s
+
+             setTimeout(function(){
+
+
+                opponent.style.opacity = '1';
+
+                opponentOnScreen = true;
+
+
+                if( randomDirectionNum == 1){
+
+                    opponentDirection = rightToLeft;
+
+                    opponent.style.animation = 'opponentRunFromRight 3s linear';
+
+                } else {
+                    opponentDirection = leftToRight;
+
+                    opponent.style.animation = 'opponentRunFromLeft 3s linear';
+
+                }
+
+
+                if(opponentComingFromTheBack() == true){
+
+
+                    carefulMessage.style.opacity = '1';
+
+
+
+                    setTimeout(function(){
+
+                        carefulMessage.style.opacity = '0';
+
+
+                    }, 1000)
+                }
+
+
+
+
+             }, randomTimeNum );
+
+
+
+
+            }
 
 
 
@@ -425,9 +589,15 @@
                   //IF YOU PRESS Q, JUMP
 
           if (event.keyCode == 113) {
+
+
+              if(gunLoaded == true){
+
+                shoot();
+
+              }
                 
 
-            shoot();
                     
                  //IF YOU PRESS S, LONG TERM SHOT
 
@@ -465,7 +635,6 @@
 
         deathCount = setInterval(function(){
 
-            console.log("gameOver");
 
         }, 5000);
 
@@ -477,35 +646,169 @@
 
      function shoot(){
 
-        bullet.style.opacity = '1';
+         if(gun != 'none'){
 
-        let updatedBulletPosition = parseInt(window.getComputedStyle(bullet).getPropertyValue('left'));
+         bullet.style.opacity = '1';
+
+         gunLoaded = false;
 
 
 
-        let shotInterval = setInterval(function(){
+        let updatedBulletPosition = parseInt(window.getComputedStyle(bullet).getPropertyValue('right'));
 
-            updatedBulletPosition += 20;
+         if( playerDirection == forward ){
+     
 
-            bullet.style.left = updatedBulletPosition + 'px';
+        shotInterval = setInterval(function(){
+
+            updatedBulletPosition -= 30;
+
+            bullet.style.right = updatedBulletPosition + 'px';
+
+            checkBulletCollision();
 
             
-        }, 10);
+         }, 10);
 
-
-        setTimeout(function(){
+         
+        
+           setTimeout(function(){
 
             bullet.style.opacity = '0';
 
-            bullet.style.left = '40vw';
+            bullet.style.right = '60vw';
+
+            gunLoaded = true;
+
 
             clearInterval(shotInterval);
 
-        }, 500);
 
+            }, 200);
+
+
+
+         } else {
+
+            
+        shotInterval = setInterval(function(){
+
+            updatedBulletPosition += 30;
+
+            bullet.style.right = updatedBulletPosition + 'px';
+
+
+            checkBulletCollision();
+            
+         }, 10);
+
+         
+           setTimeout(function(){
+
+            bullet.style.opacity = '0';
+
+            bullet.style.right = '60vw';
+
+            gunLoaded = true;
+
+
+            clearInterval(shotInterval);
+
+            }, 200);
+
+         }          
+      } else {
+
+          alert ("vous n'avez pas encore d'arme!");
+      }
+  }
+
+
+
+
+     function checkBulletCollision(){
+
+
+        let opponentRight = parseInt(window.getComputedStyle(opponent).getPropertyValue('right'));
+         let bulletRight = parseInt(window.getComputedStyle(bullet).getPropertyValue('right'));
+    
+       
+
+       if(opponentOnScreen == true){
+
+           
+         if(playerDirection == forward){
+
+            
+            if(opponentDirection == rightToLeft){
+
+                  if(opponentRight > bulletRight){
+
+                    
+                    alert('adversaire tué!!');
+
+                   opponent.style.opacity = '0';
+   
+                   opponent.style.animation = '';
+
+                   opponentOnScreen = false;
+
+                   clearInterval(shotInterval);
+
+                   nextOpponentsAppearance();
+
+
+                }
+
+           }
+
+
+          } else if ((opponentDirection == leftToRight)){      
+              
+            
+              if(opponentRight < bulletRight){
+
+                 alert('adversaire tué!!');
+
+                  opponent.style.opacity = '0';
+
+                  opponent.style.animation = '';
+
+                  opponentOnScreen = false;
+
+                  clearInterval(shotInterval);
+
+                  nextOpponentsAppearance();
+
+
+            }
+
+          }   
+
+
+
+
+       }
+
+ 
 
      }
 
+
+
+     function opponentComingFromTheBack(){
+
+
+       if( opponentDirection == leftToRight && playerDirection == forward || opponentDirection == rightToLeft && playerDirection == backward ){
+
+           return true;
+
+        } else {
+
+              return false;
+        }
+
+    }
 
 
        

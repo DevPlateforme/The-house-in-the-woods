@@ -30,11 +30,7 @@ body{
     width: 100%;
     
     z-index: 1;
-    
 }
-
-
-
 
 #forrest2{
 
@@ -109,8 +105,6 @@ body{
     left:40vw;
 
     justify-content: flex-start;
-
-
 }
 
 
@@ -120,11 +114,11 @@ body{
     left:20vw;
 
     justify-content: flex-end;
-
 }
 
-#character{
 
+
+#character{
     margin-top: 40%;
 
     height: 50%;
@@ -153,7 +147,8 @@ body{
 
     z-index: 2;
 
-    animation: opponentRunFromLeft 60s infinite linear;
+    opacity: 0;
+
     
 }
 
@@ -161,20 +156,19 @@ body{
 
 #lady{
     
-    height: 15vh;
+     height: 15vh;
 
-    width: 3.5vw;
+     width: 3.5vw;
 
-    background: white;
+     background: white;
 
-    position: fixed;
+     position: fixed;
 
-    top: 75vh;
+     top: 75vh;
 
-    right: 5vw;
+     right: 5vw;
 
-    z-index: 5;
- 
+     z-index: 5;
 }
 
 
@@ -186,13 +180,32 @@ position: absolute;
 
 top: 80vh;
 
-left: 40vw;
+right: 60vw;
 
 height: 0.5vh;
 
 width: 1vw;
 
 z-index: 3;
+
+}
+
+
+#gunPackDiv{
+
+position: absolute;
+
+bottom: 40%;
+
+top: 80vh;
+
+height: 10vh;
+
+width: 10vw;
+
+left: 80vw;
+
+background: black;
 
 }
 
@@ -217,7 +230,23 @@ z-index: 3;
 }
 
 
+#carefulDiv{
 
+    position: absolute;
+
+    top: 50vh;
+
+    left: 45vw;
+
+
+    background: white;
+
+    color: black;
+
+    z-index: 4;
+
+    opacity: 0;
+}
 
 
 
