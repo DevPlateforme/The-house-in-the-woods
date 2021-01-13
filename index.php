@@ -13,6 +13,7 @@
               <div id='character'></div>
         </div>
 
+
         <div id='carefulDiv'>careful!!</div>
 
 
@@ -32,7 +33,11 @@
 
 
 
-        <div id='opponent'></div>
+        <div id='opponent'>        
+        
+             <canvas id='opponentCanvas'></canvas>
+      
+       </div>
 
          <div id='lady'></div>
 

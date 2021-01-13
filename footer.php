@@ -11,6 +11,7 @@
   <script src='js/control.js'></script>
   <script src='js/opponents.js'></script>
   <script src='js/move.js'></script>
+  <script src='js/animation.js'></script>
 
 </body>
    </html>
