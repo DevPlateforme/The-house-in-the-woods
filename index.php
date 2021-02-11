@@ -5,12 +5,22 @@
 ?>
 
 
-<h3> Vous naviguez dans les bois....votre téléphone est coupé, vous recevez un message "un étrange virus aurait attaqué Manhattan, veuillez rester chez vous, et verrouiller votre cerrure à double tours"</h3>
-    
+
+
+       <div id='darkDiv' class='rightLight'>
+
+
+
+
+       </div>
+
+
+
     
         
        <div id='characterDiv' class='forwardLightDirection'>
-              <div id='character'></div>
+              <canvas id='mainCharacterCanvas'></canvas>
+
         </div>
 
 
@@ -37,13 +47,27 @@
         
              <canvas id='opponentCanvas'></canvas>
       
-       </div>
+        </div>
+
+
+     
+
+
+
 
          <div id='lady'></div>
 
          <div id='key'></div>
 
          <div id='forrest'>
+         </div>
+
+
+         <div id='tree'>
+
+         <img src="img/tree.png" alt="">
+
+         
          </div>
 
        <div id='forrest2'>

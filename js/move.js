@@ -8,8 +8,12 @@ function backPlayerMove(){
          playerDirection = backward;
 
          characterDiv.classList.remove('forwardLightDirection');
+         darkDiv.classList.remove('rightLight');
+
 
          characterDiv.classList.add('backWardLightDirection');
+         darkDiv.classList.add('leftLight');
+
 
      }
 
@@ -142,8 +146,12 @@ function forwardPlayerMove(){
          playerDirection = forward;
 
          characterDiv.classList.remove('backWardLightDirection');
+         darkDiv.classList.remove('leftLight');
+
 
          characterDiv.classList.add('forwardLightDirection');
+         darkDiv.classList.add('rightLight');
+
    }
 
        

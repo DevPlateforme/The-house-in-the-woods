@@ -3,9 +3,18 @@
 
          var background2 = document.getElementById('forrest2');
 
+         var tree = document.getElementById('tree');
+
+
          var background1Right = 0;
 
          var background2Right = -99;
+
+         var treeRight = -50;
+
+
+
+         var darkDiv = document.getElementById('darkDiv');
 
 
          var distance = 0; 

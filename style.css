@@ -1,6 +1,8 @@
-body{
 
-    background : black;
+
+
+
+body{
 
     color: white;
 
@@ -15,7 +17,11 @@ body{
 
 #forrest{
 
+    
+
     background: url('img/forrest.jpg');
+
+    
 
     position: absolute;
 
@@ -23,9 +29,9 @@ body{
 
     background-size: cover;
 
-    top: 40vh;
+    top: 20vh;
 
-    height: 50vh;
+    height: 70vh;
 
     width: 100%;
     
@@ -45,9 +51,9 @@ body{
     
     width: 100vw;
 
-    top: 40vh;
+    top: 20vh;
     
-    height: 50vh;
+    height: 70vh;
 
     z-index: 1;
 
@@ -59,20 +65,23 @@ body{
 
     position: fixed;
 
-    right: 0px;
+    right: -50vw;
 
-    top: 20px;
+    bottom: 8vh;
 
     z-index: 2;
+
+    height: 190vh;
+
 }
 
 #tree img{
 
-     height: 80px;
+     height: 100%;
 
      width: auto;
 
-     opacity: 0.8;
+     opacity: 0.9;
 
     
 }
@@ -80,17 +89,15 @@ body{
 
 #characterDiv{
 
-    height: 30vh;
+    height: 35vh;
 
     width: 20vw;
 
-    background:gold;
-
-    position: fixed;
+    position: absolute;
 
     top: 60vh;
-
-    z-index: 2;
+    
+    z-index: 3;
 
     display: flex;
 
@@ -99,6 +106,13 @@ body{
 }
 
 
+#mainCharacterCanvas{
+
+    height: 100%;
+ 
+    width: auto;
+     
+ }
 
 .forwardLightDirection{
 
@@ -130,25 +144,27 @@ body{
 
 
 
+
 #opponent{
 
     
-    height: 15vh;
+    height: 18vh;
 
     width: 10vw;
 
     position: fixed;
 
-    top: 55vh;
+    bottom : 27.5vh;
 
     left: 75vw;
 
-    z-index: 2;
+    z-index: 3;
 
     opacity: 0;
 
     
 }
+
 
 
 
@@ -166,7 +182,7 @@ body{
 
      right: 5vw;
 
-     z-index: 5;
+     z-index: 3;
 }
 
 
@@ -231,19 +247,13 @@ background: black;
 #carefulDiv{
 
     position: absolute;
-
     top: 50vh;
-
     left: 45vw;
-
-
     background: white;
-
     color: black;
-
-    z-index: 4;
-
+    z-index: 5;
     opacity: 0;
+    
 }
 
 
@@ -380,6 +390,65 @@ background: black;
 }
 
 
+#darkDiv{
+
+
+   position:absolute;
+   height: 100vh;
+   width: 100vw;
+   content: '';
+   display: block;
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   pointer-events: none;
+
+   
+
+
+   z-index: 4;
+
+
+}
+
+
+.leftLight{
+
+
+    --cursorX: 31.5vw;
+    --cursorY: 55vh;
+ 
+    background: radial-gradient(
+      circle 17vmax at var(--cursorX) var(--cursorY),
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.5) 80%,
+      rgba(0,0,0,.95) 100%
+    );
+
+
+
+
+}
+
+
+
+
+.rightLight{
+
+    --cursorX: 48vw;
+    --cursorY: 55vh;
+ 
+    background: radial-gradient(
+      circle 16.5vmax at var(--cursorX) var(--cursorY),
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.5) 80%,
+      rgba(0,0,0,.95) 100%
+    );
+
+
+
+
+}
 
 
 
@@ -418,7 +487,6 @@ background: black;
     70%{ left: 85vw}
     100%{ left: 100vw} 
 }
-
 
 
 
