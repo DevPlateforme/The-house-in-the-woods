@@ -14,14 +14,19 @@
 
        </div>
 
+      
 
+       <div id='gunShotSpark'>
+
+          <canvas id='gunShotCanvas'></canvas>
+       
+       </div>
 
     
         
        <div id='characterDiv' class='forwardLightDirection'>
-              <canvas id='mainCharacterCanvas'></canvas>
-
-        </div>
+            <div id='character'><canvas id='mainCharacterCanvas'></canvas></div>
+        </div> 
 
 
         <div id='carefulDiv'>careful!!</div>
@@ -50,23 +55,18 @@
         </div>
 
 
-     
-
-
-
-
          <div id='lady'></div>
 
          <div id='key'></div>
 
          <div id='forrest'>
+
          </div>
 
 
          <div id='tree'>
 
-         <img src="img/tree.png" alt="">
-
+            <img src="img/tree.png" alt="">
          
          </div>
 

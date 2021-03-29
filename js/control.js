@@ -19,7 +19,19 @@
 
           }
 
+          else if(e.key == 'q'){
 
+             if(gunLoaded == true){
+
+               shoot();
+
+               alert('shoot!!')
+
+
+             }
+            
+
+          } 
 
   
 
@@ -28,26 +40,3 @@
 
     //WHY DOESNT IT WORK WITH THE FUNCTION UPTHERE?
 
-     
-    document.addEventListener("keypress", function(event) {
-
-                  //IF YOU PRESS Q, 
-
-          if (event.keyCode == 113) {
-
-
-              if(gunLoaded == true){
-
-                shoot();
-
-              }
-                
-
-                    
-                 //IF YOU PRESS S, NEW WEAPON
-
-          } else if(event.keyCode == 115){
-
-              nextWeapon();
-          }
-     });

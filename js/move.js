@@ -132,7 +132,7 @@ function backPlayerMove(){
 
 function forwardPlayerMove(){
 
-    console.log(distance);
+      //console.log(distance);
 
 
      if(distance < maxDistance){
@@ -245,7 +245,7 @@ function forwardPlayerMove(){
 
      } else {
 
-         alert('on dirait que je ne peux pas aller plus loin');
+         //alert('on dirait que je ne peux pas aller plus loin');
      }
 
 

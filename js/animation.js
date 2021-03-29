@@ -1,5 +1,4 @@
 
-
 var canvas = document.getElementById('opponentCanvas');
 
 var c = canvas.getContext('2d');
@@ -31,7 +30,7 @@ setInterval(function(){
 
     }
     c.clearRect(0, 0, canvas.width, canvas.height);
-    c.drawImage(images[index], 100 , 100 , 100 , 100);
+    c.drawImage(images[index], 0, 0, canvas.width, canvas.height);
 
     index++;
 },100)
@@ -74,7 +73,8 @@ function characterRun(){
     
         }
         mainC.clearRect(0, 0, mainCharacterCanvas.width, mainCharacterCanvas.height);
-        mainC.drawImage(mcImages[index2], 50 , 50 , 100 , 100);
+        mainC.drawImage(mcImages[index2], 0 , 0 , mainCharacterCanvas.width , mainCharacterCanvas.height);
+
     
         index2++;
     
@@ -85,4 +85,60 @@ function characterRun(){
 
 
 
+
+
+
+
+//Gunshot
+
+
+var gunShotCanvas = document.getElementById('gunShotCanvas');
+
+var gunShotContext = gunShotCanvas.getContext('2d');
+
+var gunImages = new Array(3);
+
+for (var i=1; i < gunImages.length ; i++){
+
+    gunImages[i] = new Image();
+
+    gunImages[i].src = './img/gunshot(' + i.toString() + ').png';
+
+}
+
+
+
+var index3 = 0;
+
+var gunSparkInterval;
+
+function gunShot(){
+
+   gunSparkInterval = setInterval(function(){
+    
+
+        if( index3 >= 3){
+              
+            index3 = 0;
+    
+        }
+
+        gunShotContext.clearRect(0, 0, gunShotCanvas.width, gunShotCanvas.height);
+        gunShotContext.drawImage(gunImages[index3], 0 , 0 , gunShotCanvas.width , gunShotCanvas.height);
+
+    
+        index3++;
+    
+    
+    },130);
+
+}
+
+
+
+
+
+ 
+
 characterRun();
+

@@ -19,7 +19,7 @@
                   if(opponentRight > bulletRight){
 
                     
-                    alert('adversaire tué!!');
+                    //alert('adversaire tué!!');
 
                    opponent.style.opacity = '0';
    
@@ -42,7 +42,7 @@
             
               if(opponentRight < bulletRight){
 
-                 alert('adversaire tué!!');
+                 //alert('adversaire tué!!');
 
                   opponent.style.opacity = '0';
 
@@ -104,7 +104,7 @@
                   
                    if(ladyLeftEdge >= characterLeftEdge ){
 
-                         alert('vous avez été tué par la lady');
+                         //alert('vous avez été tué par la lady');
 
 
 
@@ -112,7 +112,7 @@
 
               }
 
-
+    
 
                   
             
@@ -121,18 +121,21 @@
 
              if(opponentDirection == rightToLeft){
                  
-                  if(opponentLeftEdge >= characterLeftEdge ){
-                 
+                  if(opponentLeftEdge >= (window.innerWidth/2)){
 
+
+                     alert('opponent collision');
 
                   }
 
               } else if(opponentDirection == leftToRight){
 
                     
-                 if(opponentLeftEdge <= characterLeftEdge ){
+                 if(opponentLeftEdge <= (window.innerWidth/2)){
+
+                       alert('opponent collision');
                  
-             }
+                 }
 
                   
        }

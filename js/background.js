@@ -25,17 +25,17 @@
 
 
          
-        background1Right += 0.6;
+        background1Right += 1.5;
         
-        background2Right += 0.6;
+        background2Right += 1.5;
 
-        treeRight += 0.6;
+        treeRight += 1.5;
         
 
 
-        background1.style.right = background1Right + 'vw';
+        background1.style.right = background1Right + 'px';
 
-        background2.style.right = background2Right + 'vw';
+        background2.style.right = background2Right + 'px';
         
         tree.style.right = treeRight + 'vw';
 
@@ -65,18 +65,18 @@
 
          
         
-        background1Right -= 0.6;
+        background1Right -= 1.5;
         
-        background2Right -= 0.6;
+        background2Right -= 1.5;
 
-        treeRight -= 0.6;
+        treeRight -= 1.5;
 
         
 
 
-        background1.style.right = background1Right + 'vw';
+        background1.style.right = background1Right + 'px';
 
-        background2.style.right= background2Right + 'vw';
+        background2.style.right= background2Right + 'px';
 
         tree.style.right= treeRight + 'vw';
 

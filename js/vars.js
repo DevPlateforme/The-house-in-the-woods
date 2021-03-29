@@ -122,12 +122,7 @@
 
          var currentWeapon = none;
 
-         
-         var checkGunInterval;
-
-         var checkUmp45Interval;
-
-
+        
 
 
          //INTERVAL
@@ -138,17 +133,12 @@
          window.onload = function(){
             document.onkeydown = checkKey;
            
-            setInterval(function(){checkPlayerCollision()}, 100);
+            setInterval(function(){checkPlayerCollision()}, 400);
 
             setTimeout(function() { nextOpponentsAppearance()}, 5000);
 
 
             //LAUNCH AN INTERVAL TO CHECK IF THE PLAYER FIND A GUN (INTERVAL CLEARED WHEN THE PLAYER DOES)
-
-
-            checkGunInterval = setInterval( function(){ checkGun()}, 2000);
-
-
 
 
 
@@ -191,11 +181,11 @@
             event.target.style.display = 'none';
 
 
-            alert('vous avez trouvé un livre! Vous le rangez dans votre sac => nombre de livres => ' + booksInBag);
+            //alert('vous avez trouvé un livre! Vous le rangez dans votre sac => nombre de livres => ' + booksInBag);
 
             if(booksInBag == 3){
 
-                alert("vous avez réussi!!");
+                //alert("vous avez réussi!!");
 
 
             }
