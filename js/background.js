@@ -25,11 +25,11 @@
 
 
          
-        background1Right += 1.5;
+        background1Right += 2;
         
-        background2Right += 1.5;
+        background2Right += 2;
 
-        treeRight += 1.5;
+        treeRight += 2;
         
 
 
@@ -68,11 +68,11 @@
 
          
         
-        background1Right -= 1.5;
+        background1Right -= 2;
         
-        background2Right -= 1.5;
+        background2Right -= 2;
 
-        treeRight -= 1.5;
+        treeRight -= 2;
 
         
 

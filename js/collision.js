@@ -124,7 +124,11 @@
                   if(opponentLeftEdge >= (window.innerWidth/2)){
 
 
-                     alert('opponent collision =>opponent direction right to left , opponent left edge => ' + opponentLeftEdge + ' , window => ' + (window.innerWidth/2) );
+                     document.getElementById('lossMessage').style.display = 'flex';
+
+                     window.location.reload();
+
+                     
 
                   }
 
@@ -133,7 +137,10 @@
                     
                  if(opponentLeftEdge <= (window.innerWidth/2)){
 
-                  alert('opponent collision =>opponent direction left to right , opponent left edge => ' + opponentLeftEdge + ' , window => ' + (window.innerWidth/2) );
+                       document.getElementById('lossMessage').style.display = 'flex';
+                       window.location.reload();
+
+                       
                  
                  }
 

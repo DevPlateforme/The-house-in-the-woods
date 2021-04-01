@@ -53,7 +53,6 @@
               if(opponentDirection == rightToLeft){
 
             
-                  alert('adversaire tué from front!!');
   
   
                    opponent.style.animation = '';
@@ -80,7 +79,6 @@
                 
               
   
-                   alert('adversaire tué from behind!!');
   
   
                     opponent.style.animation = '';
@@ -112,18 +110,22 @@
        function bookFound(book){
 
          clearInterval(book.bookInterval);
-         booksCount--;
-         displayFoundBookPopup();
+         booksCount++;
+         updateGuiCount();
          document.getElementById(book.name).style.display = 'none';
 
-         alert('bk=>' + book.name);
+         if(booksCount == 7){
+
+          alert('congratulations!! You found all the files and manage to release this place alive !!');
+
+         }
+
 
        }
 
 
 
-       function displayFoundBookPopup(){
+       function updateGuiCount(){
 
-        alert('you found a book ! there are ' + booksCount + ' left to find!');
-
+        document.getElementById('booksCount').innerHTML = booksCount;
        }

@@ -5,6 +5,22 @@
 ?>
        
 
+       <div id='lossMessage'>
+       
+       You were killed...
+       
+       
+       </div>
+
+
+
+       <div id='booksCount'>
+
+         classified files : 0
+       
+       </div>
+
+
 
 
        <div id='darkDiv' class='rightLight'>

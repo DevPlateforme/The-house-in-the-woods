@@ -162,7 +162,7 @@
 
 
          
-       var booksCount = 7;
+       var booksCount = 0;
 
 
 

@@ -191,6 +191,32 @@ body{
 }
 
 
+#booksCount{
+    position: absolute;
+    top: 7.5%;
+    left: 40%;
+    height: 10vh;
+    width: 20%;
+    display: flex;
+    z-index: 8;
+    color:red;
+    font-size: 1.25vw;
+}
+
+
+#lossMessage{
+
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    height: 10vh;
+    width: 20%;
+    display: flex;
+    z-index: 8;
+    color:red;
+    opacity: 0;
+}
+
 
 #gunshotSpark{
 
@@ -207,6 +233,7 @@ body{
     opacity: 0;
     
 }
+
 
 
 #gunshotSpark2{
