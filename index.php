@@ -3,7 +3,7 @@
    require 'header.php';
 
 ?>
-
+       
 
 
 
@@ -18,11 +18,15 @@
        <div id=''></div>
       
 
-       <div id='gunShotSpark'>
-
-          <canvas id='gunShotCanvas'></canvas>
+       <div id='gunshotSpark'>
+                 <img src="./img/frontSpark.png" alt="" class="sparkImg">
        
        </div>
+
+       <div id='gunshotSpark2'>
+           <img src="./img/backSpark.png" alt="" class="sparkImg">
+       </div>
+
 
     
         
@@ -40,13 +44,13 @@
 
          <div id='gun'></div>
 
-         <div id="book1" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
-         <div id="book2" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
-         <div id="book3" onclick='foundBook(event)' ><img class='secretImgPng' src='../img/secret.png'></div>
-         <div id="book4" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
-         <div id="book5" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
-         <div id="book6" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
-         <div id="book7" onclick='foundBook(event)' ><img class='secretImgPng' src='../img/secret.png'></div>
+         <div id="book1" onclick='foundBook(event)'><img class='secretImgPng' src='./img/secret.png'></div>
+         <div id="book2" onclick='foundBook(event)'><img class='secretImgPng' src='./img/secret.png'></div>
+         <div id="book3" onclick='foundBook(event)' ><img class='secretImgPng' src='./img/secret.png'></div>
+         <div id="book4" onclick='foundBook(event)'><img class='secretImgPng' src='./img/secret.png'></div>
+         <div id="book5" onclick='foundBook(event)'><img class='secretImgPng' src='./img/secret.png'></div>
+         <div id="book6" onclick='foundBook(event)'><img class='secretImgPng' src='./img/secret.png'></div>
+         <div id="book7" onclick='foundBook(event)' ><img class='secretImgPng' src='./img/secret.png'></div>
 
 
 

@@ -56,6 +56,11 @@
          var deathCount;
 
 
+         var gunShotSpark = document.getElementById("gunshotSpark");
+
+         var backGunShotSpark = document.getElementById("gunshotSpark2");
+
+
          var lady = document.getElementById('lady');
 
          var characterDiv = document.getElementById('characterDiv');
@@ -81,7 +86,7 @@
 
          var book1Object = {name: 'book1' , bookInterval: setInterval(function(){
 
-            if( parseInt(window.getComputedStyle(book1).getPropertyValue('left')) >= (window.innerWidth/2)){
+            if( parseInt(window.getComputedStyle(book1).getPropertyValue('left')) >= (window.innerWidth/3.5)){
 
                 bookFound(book1Object);
             }
@@ -91,7 +96,7 @@
 
          var book2Object = {name: 'book2' , bookInterval: setInterval(function(){
 
-            if(parseInt(window.getComputedStyle(book2).getPropertyValue('left'))  >= (window.innerWidth/2)){
+            if(parseInt(window.getComputedStyle(book2).getPropertyValue('left'))  >= (window.innerWidth/3.5)){
 
                 bookFound(book2Object);
             }
@@ -101,7 +106,7 @@
 
          var book3Object = {name: 'book3' , bookInterval: setInterval(function(){
 
-            if(parseInt(window.getComputedStyle(book3).getPropertyValue('left'))  >= (window.innerWidth/2)){
+            if(parseInt(window.getComputedStyle(book3).getPropertyValue('left'))  >= (window.innerWidth/3.5)){
 
                 bookFound(book3Object);
             }

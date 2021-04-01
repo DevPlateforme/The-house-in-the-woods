@@ -9,15 +9,46 @@
  function shoot(){
 
 
-          let opponentRight = parseInt(window.getComputedStyle(opponent).getPropertyValue('right'));
-           let bulletRight = parseInt(window.getComputedStyle(bullet).getPropertyValue('right'));
-     
+
+  if(playerDirection == forward){
+
+
+    setTimeout(function(){
+      gunShotSpark.style.opacity = 0;
+
+    },100)
+
+    gunShotSpark.style.opacity = 1;
+
+    } else {
+
+     setTimeout(function(){
+        backGunShotSpark.style.opacity = 0;
+
+      },100);
+
+
+      backGunShotSpark.style.opacity = 1;
+
+  
+
+
+
+    }
   
          if(opponentOnScreen == true){
   
              
            if(playerDirection == forward){
+            setTimeout(function(){
+              gunShotSpark.style.opacity = 0;
+
+            },100);
   
+
+            gunShotSpark.style.opacity = 1;
+
+           
               
               if(opponentDirection == rightToLeft){
 
@@ -40,7 +71,12 @@
                }
   
   
-            } else if ((opponentDirection == leftToRight)){      
+            } else {
+
+              
+       
+
+              if ((opponentDirection == leftToRight)){      
                 
               
   
@@ -58,7 +94,9 @@
   
      
   
-            }   
+            }
+            
+          }
   
   
          }

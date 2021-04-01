@@ -6,15 +6,13 @@ function backPlayerMove(){
     if (playerDirection == forward){
 
          playerDirection = backward;
-
          characterDiv.classList.remove('forwardLightDirection');
          darkDiv.classList.remove('rightLight');
-
-
          characterDiv.classList.add('backWardLightDirection');
-         darkDiv.classList.add('leftLight');
-
-
+         darkDiv.classList.add('leftLight');  
+         clearCurrentRunInterval();
+         backCharacterRun();
+         
      }
 
 
@@ -27,8 +25,13 @@ function backPlayerMove(){
 
     
     moveBackgroundBackWard();
-   
 
+
+
+
+
+   
+/*
    if(ladyOnScreen == true){
 
       if(ladySeesThePlayer == true){
@@ -48,6 +51,8 @@ function backPlayerMove(){
     
 
     }
+
+    */
 
 
 }
@@ -152,10 +157,17 @@ function forwardPlayerMove(){
          characterDiv.classList.add('forwardLightDirection');
          darkDiv.classList.add('rightLight');
 
+         clearCurrentRunInterval();
+         characterRun();
+
    }
 
        
        moveBackgroundForWard();
+
+       
+    
+
 
        /*
 

@@ -39,10 +39,13 @@
         
         tree.style.right = treeRight + 'vw';
 
+        characterDiv.style.left = '37.5vw';
+
+
 
         
     }
-
+ 
     
 
     function moveBackgroundBackWard(){
@@ -79,6 +82,11 @@
         background2.style.right= background2Right + 'px';
 
         tree.style.right= treeRight + 'vw';
+
+        characterDiv.style.left = '7.5vw';
+
+
+
 
 
         

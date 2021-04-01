@@ -25,7 +25,6 @@
 
                shoot();
 
-               alert('shoot!!')
 
 
              }

@@ -3,6 +3,9 @@ var canvas = document.getElementById('opponentCanvas');
 
 var c = canvas.getContext('2d');
 
+var none = 'none';
+
+var currentInterval = none;
 
 canvas.width = window.innerWidth;
 
@@ -60,11 +63,10 @@ for (var i=1; i < mcImages.length ; i++){
 
 var index2 = 1;
 
-var runInterval;
 
 function characterRun(){
 
-   runInterval = setInterval(function(){
+   currentInterval = setInterval(function(){
     
 
         if( index2 >= 7){
@@ -89,69 +91,103 @@ function characterRun(){
 
 
 
-//Gunshot
+//back run
 
 
-var gunShotCanvas = document.getElementById('gunShotCanvas');
 
-var gunShotContext = gunShotCanvas.getContext('2d');
+var canvas = document.getElementById('opponentCanvas');
+
+var c = canvas.getContext('2d');
 
 
-var gunShotImages = new Array(3);
+canvas.width = window.innerWidth;
 
-for (var i=1; i < gunShotImages.length ; i++){
+canvas.height = window.innerHeight;
 
-    gunShotImages[i] = new Image();
 
-    gunShotImages[i].src = './img/gunshot(' + i.toString() + ').png';
+var images = new Array(7);
+
+for (i=1; i < images.length ; i++){
+
+       images[i] = new Image();
+
+       images[i].src = './img/Walk(' + i.toString() + ').png';
+
+}
+
+
+var index = 1;
+
+
+
+
+
+
+
+//Main character
+
+
+
+var mcBackImages = new Array(7);
+
+for (var i=1; i <  mcBackImages .length ; i++){
+
+    mcBackImages[i] = new Image();
+
+    mcBackImages[i].src = './img/charBack(' + i.toString() + ').png';
 
 }
 
 
 
-var gunshotIndex = 1;
-
-var shotInterval;
-
-function gunShotAnimation(){
-
-    gunShotCanvas.style.opacity = 1;
-
-   runInterval = setInterval(function(){
+var indexBack = 1;
 
 
+function backCharacterRun(){
 
+    currentInterval = setInterval(function(){
     
 
-        if( gunshotIndex >= 3){
+        if( indexBack >= 7){
               
-            gunshotIndex = 1;
+            indexBack = 1;
     
         }
-        mainC.clearRect(0, 0, gunShotCanvas .width, gunShotCanvas .height);
-        mainC.drawImage(gunShotImages[gunshotIndex], 0 , 0 , gunShotCanvas .width , gunShotCanvas .height);
+        mainC.clearRect(0, 0, mainCharacterCanvas.width, mainCharacterCanvas.height);
+        mainC.drawImage( mcBackImages[indexBack], 0 , 0 , mainCharacterCanvas.width , mainCharacterCanvas.height);
 
     
-        gunshotIndex++;
+        indexBack++;
     
     
-    },55);
+    },130);
+
+}
 
 
 
-    setTimeout(function(){
-
-        clearInterval(runInterval);
-
-        //gunShotCanvas.style.opacity = 0;
 
 
 
-    },300);
 
+function clearCurrentRunInterval(){
+
+    
+      if(currentInterval != none){
+
+
+        clearInterval(currentInterval);
+        
+
+
+      }
 
 
 }
+
+
+
+
 
 
 characterRun();
