@@ -51,32 +51,33 @@
 
                 opponentDirection = rightToLeft;
 
-                opponent.style.animation = 'opponentRunFromRight 5.5s linear';
+                opponent.style.animation = 'opponentRunFromRight 8.5s linear';
 
             } else {
                 opponentDirection = leftToRight;
 
-                opponent.style.animation = 'opponentRunFromLeft 5.5s linear';
+                opponent.style.animation = 'opponentRunFromLeft 8.5s linear';
 
             }
 
+            setTimeout(function(){
+                                
+                if(opponentComingFromTheBack() == true){
 
-            if(opponentComingFromTheBack() == true){
+                     carefulMessage.style.opacity = '1';
 
-
-                carefulMessage.style.opacity = '1';
-
-
-
-                setTimeout(function(){
-
-                    carefulMessage.style.opacity = '0';
-
-
-                }, 1000)
-            }
+                     setTimeout(function(){
+ 
+                          carefulMessage.style.opacity = '0';
+ 
+                     }, 1000);
 
 
+                  } 
+
+               } , 500
+
+           )
 
 
          }, randomTimeNum );

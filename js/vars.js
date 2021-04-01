@@ -18,9 +18,11 @@
 
 
          var distance = 0; 
+
+         var maxDistanceBackward = - 1500;
           
 
-         var maxDistance = 1500;        
+         var maxDistanceForward = 1500;        
             
          var shotInterval;
 
@@ -75,6 +77,88 @@
          var book5 = document.getElementById("book5");
          var book6 = document.getElementById("book6");
          var book7 = document.getElementById("book7");
+
+
+         var book1Object = {name: 'book1' , bookInterval: setInterval(function(){
+
+            if( parseInt(window.getComputedStyle(book1).getPropertyValue('left')) >= (window.innerWidth/2)){
+
+                bookFound(book1Object);
+            }
+
+
+         },500) };
+
+         var book2Object = {name: 'book2' , bookInterval: setInterval(function(){
+
+            if(parseInt(window.getComputedStyle(book2).getPropertyValue('left'))  >= (window.innerWidth/2)){
+
+                bookFound(book2Object);
+            }
+
+
+         },500)};
+
+         var book3Object = {name: 'book3' , bookInterval: setInterval(function(){
+
+            if(parseInt(window.getComputedStyle(book3).getPropertyValue('left'))  >= (window.innerWidth/2)){
+
+                bookFound(book3Object);
+            }
+
+
+         },500)};
+
+
+         var book4Object = {name: 'book4' , bookInterval: setInterval(function(){
+
+            if(parseInt(window.getComputedStyle(book4).getPropertyValue('left'))  <= (window.innerWidth/2)){
+
+                bookFound(book4Object);
+            }
+
+
+         },500)};
+
+         var book5Object = {name: 'book5' , bookInterval: setInterval(function(){
+
+            if(parseInt(window.getComputedStyle(book5).getPropertyValue('left')) <= (window.innerWidth/2)){
+
+                bookFound(book5Object);
+            }
+
+
+         },500)};
+
+         
+
+
+         var book6Object = {name: 'book6' , bookInterval: setInterval(function(){
+
+            if(parseInt(window.getComputedStyle(book6).getPropertyValue('left')) <= (window.innerWidth/2)){
+
+                bookFound(book6Object);
+            }
+
+
+         },500)};
+
+
+         var book7Object = {name: 'book7' , bookInterval: setInterval(function(){
+
+            if(parseInt(window.getComputedStyle(book7).getPropertyValue('left')) <= (window.innerWidth/2)){
+
+                bookFound(book7Object);
+            }
+
+
+         },500)};
+
+
+
+         
+       var booksCount = 7;
+
 
 
 
@@ -172,29 +256,4 @@
 
 
 
-        function foundBook(event){
-
-            let bookRightPosition = window.getComputedStyle(event.target).getPropertyValue('right');
-
-
-            booksInBag += 1;
-            
-            
-            event.target.style.display = 'none';
-
-
-            //alert('vous avez trouvé un livre! Vous le rangez dans votre sac => nombre de livres => ' + booksInBag);
-
-            if(booksInBag == 3){
-
-                //alert("vous avez réussi!!");
-
-
-            }
-
-
-                
-        }
-
-
-       
+        

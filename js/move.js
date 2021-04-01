@@ -18,7 +18,7 @@ function backPlayerMove(){
      }
 
 
-    if(distance > 0){
+    if(distance > maxDistanceBackward){
 
         distance -= 1;
     
@@ -135,7 +135,7 @@ function forwardPlayerMove(){
       //console.log(distance);
 
 
-     if(distance < maxDistance){
+     if(distance < maxDistanceForward){
          
 
        distance += 1;
@@ -157,6 +157,8 @@ function forwardPlayerMove(){
        
        moveBackgroundForWard();
 
+       /*
+
        if(ladyOnScreen == true){
            
            let updatedRight = parseInt(window.getComputedStyle(lady).getPropertyValue('right')) + 6;
@@ -177,6 +179,8 @@ function forwardPlayerMove(){
 
 
        }
+
+       */
 
 
        if(book1OnScreen == true){

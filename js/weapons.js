@@ -67,3 +67,25 @@
   
        }
   
+
+
+
+  
+       function bookFound(book){
+
+         clearInterval(book.bookInterval);
+         booksCount--;
+         displayFoundBookPopup();
+         document.getElementById(book.name).style.display = 'none';
+
+         alert('bk=>' + book.name);
+
+       }
+
+
+
+       function displayFoundBookPopup(){
+
+        alert('you found a book ! there are ' + booksCount + ' left to find!');
+
+       }
