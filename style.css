@@ -24,7 +24,7 @@ body{
 
     bottom : 10vh;
 
-    height: 70vh;
+    height: 80vh;
 
     width: 100%;
     
@@ -46,7 +46,7 @@ body{
 
     bottom: 10vh;
     
-    height: 70vh;
+    height: 80vh;
 
     z-index: 1;
 
@@ -63,7 +63,7 @@ body{
 
     z-index: 2;
 
-    height: 130vh;
+    height: 180vh;
 
 }
 
@@ -84,6 +84,8 @@ body{
 
     bottom: 10vh;
 
+    left: 37.5vw;
+
     height: 19vh;
 
     width: 22vw;
@@ -94,7 +96,6 @@ body{
 
     flex-direction: row;
 
-    background : red;
 
 }
 
@@ -185,6 +186,8 @@ body{
      right: 5vw;
 
      z-index: 3;
+     
+     opacity: 0.1;
 }
 
 
@@ -195,8 +198,8 @@ body{
 
     position: absolute;
     
-    top: 30vh;
-    
+    bottom: 10vh;
+
     right: 50vw;
     
     height: 20vh;
@@ -204,6 +207,12 @@ body{
     width: 10vw;
     
     z-index: 3;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
     
 
 }
@@ -289,79 +298,73 @@ background: black;
 }
 
 
+#secretImgPng{
+
+    height: 90%;
+    width: auto;
+
+}
+
 
 #book1{
 
-    
     height: 15vh;
-
     width: 3.5vw;
-
     background: orange;
-
     position: fixed;
-
     top: 75vh;
-
     right: -50vw;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
    
 }
 
 
 #book2{
 
-    
     height: 15vh;
-
     width: 3.5vw;
-
     background: orange;
-
     position: fixed;
-
     top: 75vh;
-
     right: -100vw;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    
    
 }
 
 
 #book3{
 
-    
     height: 15vh;
-
     width: 3.5vw;
-
     background: orange;
-
     position: fixed;
-
     top: 75vh;
-
     right: -120vw;
     z-index: 2;
+    display: flex;
+    justify-content: center;
    
 }
 
 
 #book4{
 
-    
     height: 15vh;
-
     width: 3.5vw;
-
     background: orange;
-
     position: fixed;
-
     top: 75vh;
-
     right: -180vw;
     z-index: 2;
+    display: flex;
+    justify-content: center;
    
 }
 
@@ -381,6 +384,8 @@ background: black;
 
     right: -250vw;
     z-index: 2;
+    display: flex;
+    justify-content: center;
    
 }
 
@@ -400,6 +405,8 @@ background: black;
 
     right: -300vw;
     z-index: 2;
+    display: flex;
+    justify-content: center;
    
 }
 
@@ -407,17 +414,14 @@ background: black;
 
     
     height: 15vh;
-
     width: 3.5vw;
-
     background: orange;
-
     position: fixed;
-
     top: 75vh;
-
     right: -400vw;
     z-index: 2;
+    display: flex;
+    justify-content: center;
    
 }
 
@@ -448,10 +452,10 @@ background: black;
 
 
     --cursorX: 31.5vw;
-    --cursorY: 55vh;
+    --cursorY: 50vh;
  
     background: radial-gradient(
-      circle 17vmax at var(--cursorX) var(--cursorY),
+      circle 20vmax at var(--cursorX) var(--cursorY),
       rgba(0,0,0,0) 0%,
       rgba(0,0,0,.5) 80%,
       rgba(0,0,0,.95) 100%
@@ -468,10 +472,10 @@ background: black;
 .rightLight{
 
     --cursorX: 48vw;
-    --cursorY: 55vh;
+    --cursorY: 50vh;
  
     background: radial-gradient(
-      circle 16.5vmax at var(--cursorX) var(--cursorY),
+      circle 20vmax at var(--cursorX) var(--cursorY),
       rgba(0,0,0,0) 0%,
       rgba(0,0,0,.5) 80%,
       rgba(0,0,0,.95) 100%

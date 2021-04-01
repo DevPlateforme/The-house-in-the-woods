@@ -96,49 +96,63 @@ var gunShotCanvas = document.getElementById('gunShotCanvas');
 
 var gunShotContext = gunShotCanvas.getContext('2d');
 
-var gunImages = new Array(3);
 
-for (var i=1; i < gunImages.length ; i++){
+var gunShotImages = new Array(3);
 
-    gunImages[i] = new Image();
+for (var i=1; i < gunShotImages.length ; i++){
 
-    gunImages[i].src = './img/gunshot(' + i.toString() + ').png';
+    gunShotImages[i] = new Image();
+
+    gunShotImages[i].src = './img/gunshot(' + i.toString() + ').png';
 
 }
 
 
 
-var index3 = 0;
+var gunshotIndex = 1;
 
-var gunSparkInterval;
+var shotInterval;
 
-function gunShot(){
+function gunShotAnimation(){
 
-   gunSparkInterval = setInterval(function(){
+    gunShotCanvas.style.opacity = 1;
+
+   runInterval = setInterval(function(){
+
+
+
     
 
-        if( index3 >= 3){
+        if( gunshotIndex >= 3){
               
-            index3 = 0;
+            gunshotIndex = 1;
     
         }
+        mainC.clearRect(0, 0, gunShotCanvas .width, gunShotCanvas .height);
+        mainC.drawImage(gunShotImages[gunshotIndex], 0 , 0 , gunShotCanvas .width , gunShotCanvas .height);
 
-        gunShotContext.clearRect(0, 0, gunShotCanvas.width, gunShotCanvas.height);
-        gunShotContext.drawImage(gunImages[index3], 0 , 0 , gunShotCanvas.width , gunShotCanvas.height);
+    
+        gunshotIndex++;
+    
+    
+    },55);
 
-    
-        index3++;
-    
-    
-    },130);
+
+
+    setTimeout(function(){
+
+        clearInterval(runInterval);
+
+        //gunShotCanvas.style.opacity = 0;
+
+
+
+    },300);
+
+
 
 }
 
-
-
-
-
- 
 
 characterRun();
 

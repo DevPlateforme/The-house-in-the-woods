@@ -124,7 +124,7 @@
                   if(opponentLeftEdge >= (window.innerWidth/2)){
 
 
-                     alert('opponent collision');
+                     alert('opponent collision =>opponent direction right to left , opponent left edge => ' + opponentLeftEdge + ' , window => ' + (window.innerWidth/2) );
 
                   }
 
@@ -133,7 +133,7 @@
                     
                  if(opponentLeftEdge <= (window.innerWidth/2)){
 
-                       alert('opponent collision');
+                  alert('opponent collision =>opponent direction left to right , opponent left edge => ' + opponentLeftEdge + ' , window => ' + (window.innerWidth/2) );
                  
                  }
 

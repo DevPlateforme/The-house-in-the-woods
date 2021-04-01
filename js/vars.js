@@ -137,6 +137,8 @@
 
             setTimeout(function() { nextOpponentsAppearance()}, 5000);
 
+            
+
 
             //LAUNCH AN INTERVAL TO CHECK IF THE PLAYER FIND A GUN (INTERVAL CLEARED WHEN THE PLAYER DOES)
 

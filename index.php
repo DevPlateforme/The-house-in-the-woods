@@ -14,6 +14,8 @@
 
        </div>
 
+
+       <div id=''></div>
       
 
        <div id='gunShotSpark'>
@@ -38,13 +40,13 @@
 
          <div id='gun'></div>
 
-         <div id="book1" onclick='foundBook(event)'></div>
-         <div id="book2" onclick='foundBook(event)'></div>
-         <div id="book3" onclick='foundBook(event)' ></div>
-         <div id="book4" onclick='foundBook(event)'></div>
-         <div id="book5" onclick='foundBook(event)'></div>
-         <div id="book6" onclick='foundBook(event)'></div>
-         <div id="book7" onclick='foundBook(event)' ></div>
+         <div id="book1" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
+         <div id="book2" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
+         <div id="book3" onclick='foundBook(event)' ><img class='secretImgPng' src='../img/secret.png'></div>
+         <div id="book4" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
+         <div id="book5" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
+         <div id="book6" onclick='foundBook(event)'><img class='secretImgPng' src='../img/secret.png'></div>
+         <div id="book7" onclick='foundBook(event)' ><img class='secretImgPng' src='../img/secret.png'></div>
 
 
 

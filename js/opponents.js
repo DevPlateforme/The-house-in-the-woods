@@ -27,12 +27,12 @@
         //between 5seconds and 30 seconds, an opponent will arrive, either background or forward.
          
          //1 OR 2
-        let randomDirectionNum = Math.floor(Math.random()*2) + 1;
+        let randomDirectionNum = Math.floor((Math.random()*2))+1;
 
 
         //BETWEEN 10s AND 30s
 
-        let randomTimeNum = Math.floor((Math.random()*5000));
+        let randomTimeNum = 4000;
 
 
 
@@ -51,12 +51,12 @@
 
                 opponentDirection = rightToLeft;
 
-                opponent.style.animation = 'opponentRunFromRight 3s linear';
+                opponent.style.animation = 'opponentRunFromRight 5.5s linear';
 
             } else {
                 opponentDirection = leftToRight;
 
-                opponent.style.animation = 'opponentRunFromLeft 3s linear';
+                opponent.style.animation = 'opponentRunFromLeft 5.5s linear';
 
             }
 
@@ -106,7 +106,7 @@
 
     randomApparationTime = Math.floor((Math.random()*3000)+2000);
 
-    setInterval(function(){ ladyOnScreen = true ; lady.style.opacity = '1' },randomApparationTime);
+    setInterval(function(){ ladyOnScreen = true ; lady.style.opacity = '0.1' },randomApparationTime);
 
  }
 

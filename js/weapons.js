@@ -26,7 +26,8 @@
   
   
                    opponent.style.animation = '';
-                   opponent.style.right = '5vw';
+                   opponent.style.left = '95vw';
+
 
  
                    opponentOnScreen = false;
@@ -48,7 +49,7 @@
   
                     opponent.style.animation = '';
 
-                    opponent.style.left = '5vw';
+                    opponent.style.left = '0vw';
 
   
                     opponentOnScreen = false;
