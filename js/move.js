@@ -3,7 +3,7 @@ function backPlayerMove(){
 
 
             
-    if (playerDirection == forward){
+    if (playerDirection != backward){
 
          playerDirection = backward;
          characterDiv.classList.remove('forwardLightDirection');
@@ -146,7 +146,7 @@ function forwardPlayerMove(){
        distance += 1;
 
            
-    if (playerDirection == backward){
+    if (playerDirection != forward){
 
          playerDirection = forward;
 
@@ -273,7 +273,25 @@ function forwardPlayerMove(){
 
 
 
+   function mobileBackPlayerMove(){
 
+    if(playerDirection != backward){
 
+        clearInterval(currentMobileMove);
+        currentMobileMove = setInterval(function(){backPlayerMove()}, 36 );
+
+    }
+
+   }
 
    
+   function mobileForwardPlayerMove(){
+
+    if(playerDirection != forward){
+
+        clearInterval(currentMobileMove);
+        currentMobileMove = setInterval(function(){forwardPlayerMove()}, 36 );
+
+    }
+
+}

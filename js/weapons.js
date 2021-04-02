@@ -10,7 +10,10 @@
 
 
 
-  if(playerDirection == forward){
+
+
+
+  if(playerDirection == forward || playerDirection == none){
 
 
     setTimeout(function(){
@@ -56,7 +59,7 @@
   
   
                    opponent.style.animation = '';
-                   opponent.style.left = '95vw';
+                   opponent.style.left = '102vw';
 
 
  
@@ -72,19 +75,14 @@
   
             } else {
 
-              
        
 
               if ((opponentDirection == leftToRight)){      
                 
-              
-  
-  
   
                     opponent.style.animation = '';
 
-                    opponent.style.left = '0vw';
-
+                    opponent.style.left = '-10vw';
   
                     opponentOnScreen = false;
     
@@ -96,11 +94,9 @@
             
           }
   
-  
          }
   
-   
-  
+    
        }
   
 
@@ -127,5 +123,5 @@
 
        function updateGuiCount(){
 
-        document.getElementById('booksCount').innerHTML = booksCount;
+        document.getElementById('booksCount').innerHTML = 'classified files : ' + booksCount;
        }

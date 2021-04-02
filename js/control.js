@@ -21,20 +21,33 @@
 
           else if(e.key == 'q'){
 
-             if(gunLoaded == true){
-
-               shoot();
-
-
-
-             }
-            
+            checkAndShoot();
 
           } 
 
   
 
      }
+
+
+
+     function checkAndShoot(){
+
+      
+      if(gunLoaded == true){
+
+        shoot();
+
+
+      }
+
+
+     }
+
+
+
+
+
 
 
     //WHY DOESNT IT WORK WITH THE FUNCTION UPTHERE?

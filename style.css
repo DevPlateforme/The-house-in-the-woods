@@ -1,3 +1,8 @@
+*{
+    margin:0;
+    padding:0
+}
+
 
 body{
 
@@ -9,6 +14,7 @@ body{
 
     overflow: hidden;
 
+    background: black;
 }
 
 
@@ -59,7 +65,7 @@ body{
 
     right: -50vw;
 
-    bottom : 10vh;
+    bottom : 6.5vh;
 
     z-index: 2;
 
@@ -80,9 +86,9 @@ body{
 
 #characterDiv{
 
-    position: absolute;
+    position: fixed;
 
-    bottom: 10vh;
+    bottom: 6.75vh;
 
     left: 37.5vw;
 
@@ -142,7 +148,7 @@ body{
 
 #opponent{
 
-    position: absolute;
+    position: fixed;
 
     bottom: 10vh;
 
@@ -152,7 +158,7 @@ body{
 
     z-index: 3;
 
-    left: 75vw;
+    left: 102vw;
 
     opacity: 0;
     
@@ -222,8 +228,8 @@ body{
 
 
     position: absolute;
-    bottom: 18.5vh; 
-    left:  55vw;
+    bottom: 15vh; 
+    left:  55.5vw;
     height: 10vh;
     width: 5vw;
     z-index: 3;
@@ -239,8 +245,8 @@ body{
 #gunshotSpark2{
 
     position: absolute;
-    bottom: 18.5vh; 
-    left:  25vw;
+    bottom: 15vh; 
+    left:  23.5vw;
     height: 10vh;
     width: 5vw;
     z-index: 3;
@@ -308,8 +314,6 @@ left: 80vw;
 
 #machineGun{
 
-    background: black;
-    
     position: absolute;
     
     top: 85vh;
@@ -353,12 +357,13 @@ left: 80vw;
     width: 3.5vw;
     position: fixed;
     top: 75vh;
-    right: 120vw;
+    right: 100vw;
     z-index: 2;
     display: flex;
     justify-content: center;
     display: flex;
     justify-content: center;
+    z-index: 3;
    
 }
 
@@ -369,10 +374,12 @@ left: 80vw;
     width: 3.5vw;
     position: fixed;
     top: 75vh;
-    right: 100vw;
+    right: 150vw;
     z-index: 2;
     display: flex;
     justify-content: center;
+    z-index: 3;
+
     
    
 }
@@ -384,10 +391,12 @@ left: 80vw;
     width: 3.5vw;
     position: fixed;
     top: 75vh;
-    right: 180vw;
+    right: 200vw;
     z-index: 2;
     display: flex;
     justify-content: center;
+    z-index: 3;
+
    
 }
 
@@ -398,28 +407,25 @@ left: 80vw;
     width: 3.5vw;
     position: fixed;
     top: 75vh;
-    right: -50vw;
+    right: 125vw;
     z-index: 2;
     display: flex;
     justify-content: center;
+    z-index: 3;
+
    
 }
 
 
 #book5{
 
-    
+
     height: 15vh;
-
     width: 3.5vw;
-
-
     position: fixed;
-
     top: 75vh;
-
-    right: -80vw;
-    z-index: 2;
+    right: 0;
+    z-index: 3;
     display: flex;
     justify-content: center;
    
@@ -427,19 +433,12 @@ left: 80vw;
 
 
 #book6{
-
-    
     height: 15vh;
-
     width: 3.5vw;
-
-
     position: fixed;
-
     top: 75vh;
-
-    right: -100vw;
-    z-index: 2;
+    right: -20vw;
+    z-index: 3;
     display: flex;
     justify-content: center;
    
@@ -452,8 +451,8 @@ left: 80vw;
     width: 3.5vw;
     position: fixed;
     top: 75vh;
-    right: -130vw;
-    z-index: 2;
+    right: -80vw;
+    z-index: 3;
     display: flex;
     justify-content: center;
    
@@ -463,7 +462,7 @@ left: 80vw;
 #darkDiv{
 
 
-   position:absolute;
+   position:fixed;
    height: 100vh;
    width: 100vw;
    content: '';
@@ -473,14 +472,26 @@ left: 80vw;
    position: fixed;
    pointer-events: none;
 
-   
-
 
    z-index: 4;
 
 
 }
 
+
+#controlMessage{
+
+    position: absolute;
+    bottom: 0vh;
+    height: 10vh;
+    width: 90vw;
+    font-size: 0.75vw;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 .leftLight{
 
@@ -491,7 +502,7 @@ left: 80vw;
     background: radial-gradient(
       circle 20vmax at var(--cursorX) var(--cursorY),
       rgba(0,0,0,0) 0%,
-      rgba(0,0,0,.5) 80%,
+      rgba(0,0,0,.1) 80%,
       rgba(0,0,0,.95) 100%
     );
 
@@ -560,5 +571,142 @@ left: 80vw;
 
 
 
+#mobilePad{
+
+    display: none;
 
 
+}
+
+#pivotDiv{
+
+    display: none;
+}
+
+
+
+@media all and (min-width: 400px)and (max-width: 800px){
+
+
+
+
+    #controlMessage{
+
+        display: none;
+    }
+
+
+
+    #mobilePad{
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 10vh;
+        width: 100vw;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     }
+
+
+       #mobilePadRight{
+          height: 80%;
+          width: 40%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+
+        
+       #mobilePadLeft{
+          height: 80%;
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+       }
+
+       .mobileBtn{
+
+        height: 80%;
+        width: 10vw;
+        border-radius: 10px;
+
+       }
+
+       
+.leftLight{
+
+
+    --cursorX: 31.5vw;
+    --cursorY: 52vh;
+ 
+    background: radial-gradient(
+      circle 22.5vmax at var(--cursorX) var(--cursorY),
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.1) 80%,
+      rgba(0,0,0,.95) 100%
+    );
+
+
+
+
+}
+
+
+
+
+.rightLight{
+
+    --cursorX: 48vw;
+    --cursorY: 52vh;
+ 
+    background: radial-gradient(
+      circle 22.5vmax at var(--cursorX) var(--cursorY),
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.5) 80%,
+      rgba(0,0,0,.95) 100%
+    );
+
+
+
+
+}
+ 
+
+
+
+
+
+
+}
+
+
+
+
+@media all and (max-width: 400px){
+
+
+
+
+    #pivotDiv{
+
+        position: absolute;
+        z-index: 12;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        background: rgba(0,0,0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+}

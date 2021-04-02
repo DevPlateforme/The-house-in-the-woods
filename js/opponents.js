@@ -51,12 +51,12 @@
 
                 opponentDirection = rightToLeft;
 
-                opponent.style.animation = 'opponentRunFromRight 8.5s linear';
+                opponent.style.animation = 'opponentRunFromRight 4.5s linear';
 
             } else {
                 opponentDirection = leftToRight;
 
-                opponent.style.animation = 'opponentRunFromLeft 8.5s linear';
+                opponent.style.animation = 'opponentRunFromLeft 4.5s linear';
 
             }
 

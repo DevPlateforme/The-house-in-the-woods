@@ -7,11 +7,36 @@
 
        <div id='lossMessage'>
        
-       You were killed...
+           you were killed...
        
        
        </div>
 
+
+       <div id='pivotDiv'>Please, pivot your screen :)</div>
+
+
+       <div id='controlMessage'>
+        
+        Press "Q" to shoot , move with the keyboard arrows
+
+       </div>
+
+
+       <div id='mobilePad'>
+
+
+          <div id='mobilePadLeft'>
+             <button id='mobileMoveLeftBtn' class='mobileBtn' onclick='mobileBackPlayerMove()'><-</button>
+          </div>
+
+          
+          <div id='mobilePadRight'>
+             <button id='mobileShootBtn' class='mobileBtn' onclick='checkAndShoot()'>X</button>
+             <button id='mobileMoveRightBtn' class='mobileBtn' onclick='mobileForwardPlayerMove()'>-></button>
+           </div>
+
+       </div>
 
 
        <div id='booksCount'>

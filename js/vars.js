@@ -19,10 +19,10 @@
 
          var distance = 0; 
 
-         var maxDistanceBackward = - 1500;
+         var maxDistanceBackward = - 500;
           
 
-         var maxDistanceForward = 1500;        
+         var maxDistanceForward = 500;        
             
          var shotInterval;
 
@@ -34,11 +34,24 @@
          var forward = 'forward';
 
          var backward = 'backward';
+
+         
+
+        var currentMobileMove = setInterval(function(){
+      
+          console.log('waiting for move...');
+
+          if(distance > 10){
+
+            clearInterval(currentMobileMove);
+          }
+      
+        },600000);
            
 
          //PLAYER DIRECTION
       
-         var playerDirection = forward;
+         var playerDirection = none;
 
 
          //OPPONENT DIRECTION
@@ -211,6 +224,10 @@
 
          var currentWeapon = none;
 
+         var startInterval;
+
+         var firstLaunch = false;
+
         
 
 
@@ -224,7 +241,18 @@
            
             setInterval(function(){checkPlayerCollision()}, 400);
 
-            setTimeout(function() { nextOpponentsAppearance()}, 5000);
+       
+
+            startInterval = setInterval(function(){
+
+               if(playerDirection != none && firstLaunch == false){
+
+                  firstLaunch = true;
+                  setTimeout(function() { nextOpponentsAppearance()}, 3000);
+                  clearInterval(startInterval);
+               }
+
+            }, 500)
 
             
 
